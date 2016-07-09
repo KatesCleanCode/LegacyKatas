@@ -24,4 +24,8 @@ public class UpdatableItem {
   item.sellIn = i;
  }
 
+ public Object getSellIn() {
+  return item.sellIn;
+ }
+
 }

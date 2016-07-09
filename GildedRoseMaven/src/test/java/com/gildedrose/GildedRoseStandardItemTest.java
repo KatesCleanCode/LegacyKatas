@@ -16,11 +16,11 @@ import static org.junit.Assert.assertThat;
 public class GildedRoseStandardItemTest {
 
  private GildedRose gildedRose;
- private Item item;
+ private UpdatableItem item;
 
  @BeforeEach
  void setUp() {
-  item = ItemTestDataFactory.getStandardItem();
+  item = ItemTestDataFactory.getUpdatableStandardItem();
   gildedRose = new GildedRose(item);
  }
 
@@ -74,7 +74,7 @@ public class GildedRoseStandardItemTest {
  void atEndOfDaySellInIsDecreasedByOne() {
   gildedRose.updateQuality();
 
-  assertThat(item.sellIn, equalTo(STANDARD_SELL_IN - 1));
+  assertThat(item.getSellIn(), equalTo(STANDARD_SELL_IN - 1));
  }
 
 }
