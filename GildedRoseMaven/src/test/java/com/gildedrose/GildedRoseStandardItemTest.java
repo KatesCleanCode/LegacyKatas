@@ -24,10 +24,9 @@ public class GildedRoseStandardItemTest {
  @BeforeEach
  void setUp() {
   item = ItemTestDataFactory.getStandardItem();
-  gildedRose = new GildedRose(new Item[] { item });
+  gildedRose = new GildedRose(item);
  }
 
-// - The Quality of an item is never more than 50
 // - "Sulfuras", being a legendary item, never has to be sold or
 // decreases in Quality
 // - "Backstage passes", like aged brie, increases in Quality as
