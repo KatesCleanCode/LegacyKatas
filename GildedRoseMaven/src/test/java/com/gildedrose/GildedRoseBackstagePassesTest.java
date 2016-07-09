@@ -35,8 +35,17 @@ public class GildedRoseBackstagePassesTest {
  }
 
  @Test
- void itemIncreasesInQualityByTwoWhenSellInIsInTenDaysOrLess() {
+ void itemIncreasesInQualityByTwoWhenSellInIsInTenDays() {
   item.setSellIn(10);
+
+  gildedRose.updateQuality();
+
+  assertThat(item.getQuality(), equalTo(STANDARD_QUALITY + 2));
+ }
+
+ @Test
+ void itemIncreasesInQualityByTwoWhenSellInIsLessThanTenDays() {
+  item.setSellIn(9);
 
   gildedRose.updateQuality();
 
