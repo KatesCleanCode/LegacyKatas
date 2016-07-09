@@ -12,4 +12,8 @@ public class UpdatableItem {
   return item;
  }
 
+ public Object getQuality() {
+  return item.quality;
+ }
+
 }
