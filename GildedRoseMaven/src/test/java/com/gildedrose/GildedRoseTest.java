@@ -1,5 +1,9 @@
 package com.gildedrose;
 
+import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_QUALITY;
+import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_SELL_IN;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
@@ -11,11 +15,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 /**
- * - At the end of each day our system lowers both values for every
- * item
- *
- * Pretty simple, right? Well this is where it gets interesting:
- *
  * - Once the sell by date has passed, Quality degrades twice as
  * fast - The Quality of an item is never negative - "Aged Brie"
  * actually increases in Quality the older it gets - The Quality of
@@ -37,24 +36,24 @@ import static org.junit.Assert.assertThat;
 @RunWith(JUnitPlatform.class)
 public class GildedRoseTest {
 
- public static final int STANDARD_SELL_IN = 10;
- public static final int STANDARD_QUALITY = 20;
+ private GildedRose gildedRose;
+ private Item item;
+
+ @BeforeEach
+ void setUp() {
+  item = ItemTestDataFactory.getStandardItem();
+  gildedRose = new GildedRose(new Item[] { item });
+ }
 
  @Test
  void atEndOfDayQualityIsDecreasedByOne() {
-  int sellIn = 10;
-  int quality = 20;
-  Item item = new Item("standard", sellIn, quality);
-  GildedRose gildedRose = new GildedRose(new Item[] { item });
-
   gildedRose.updateQuality();
 
-  assertThat(item.quality, equalTo(quality - 1));
+  assertThat(item.quality, equalTo(STANDARD_QUALITY - 1));
  }
 
  @Test
  void atEndOfDaySellInIsDecreasedByOne() {
-// Item item =
   Item item = ItemTestDataFactory.getStandardItem();
   GildedRose gildedRose = new GildedRose(new Item[] { item });
 
