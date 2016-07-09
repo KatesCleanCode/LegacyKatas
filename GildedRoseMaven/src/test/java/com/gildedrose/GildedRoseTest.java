@@ -1,10 +1,12 @@
 package com.gildedrose;
 
-import org.hamcrest.Matchers;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
+
+import static org.hamcrest.Matchers.equalTo;
+
+import static org.junit.Assert.assertThat;
 
 /**
  * - At the end of each day our system lowers both values for every
@@ -32,13 +34,16 @@ import org.junit.runner.RunWith;
  */
 @RunWith(JUnitPlatform.class)
 public class GildedRoseTest {
+
  @Test
  void atEndOfDayQualityIsDecreasedByOne() {
-  Item item = new Item("standard", 10, 20);
+  int sellIn = 10;
+  int quality = 20;
+  Item item = new Item("standard", sellIn, quality);
   GildedRose gildedRose = new GildedRose(new Item[] { item });
 
   gildedRose.updateQuality();
 
-  Assert.assertThat(item.quality, Matchers.equalTo(19));
+  assertThat(item.quality, equalTo(quality - 1));
  }
 }
