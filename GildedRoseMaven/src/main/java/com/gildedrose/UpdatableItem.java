@@ -20,4 +20,8 @@ public class UpdatableItem {
   item.quality = quality;
  }
 
+ public void setSellIn(int i) {
+  item.sellIn = i;
+ }
+
 }
