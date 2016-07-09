@@ -1,11 +1,15 @@
 package com.gildedrose;
 
-import org.hamcrest.Matchers;
-import org.junit.Assert;
+import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_QUALITY;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.gildedrose.testdata.ItemTestDataFactory;
+
+import static org.hamcrest.Matchers.equalTo;
+
+import static org.junit.Assert.assertThat;
 
 public class GildedRoseLegendaryItemTest {
 // - "Sulfuras", being a legendary item, never has to be sold or
@@ -20,18 +24,9 @@ public class GildedRoseLegendaryItemTest {
  }
 
  @Test
- void qualityOfAnItemIsNeverMoreThanMaxValue() {
+ void qualityOfAnLegendaryItemIsNeverChanged() {
   gildedRose.updateQuality();
 
-  Assert.assertThat(item.getQuality(),
-   Matchers.equalTo(ItemTestDataFactory.STANDARD_QUALITY));
+  assertThat(item.getQuality(), equalTo(STANDARD_QUALITY));
  }
-//
-// @Test
-// void agedBrieIncreasesInQualityTheOlderItGets() {
-// gildedRose.updateQuality();
-//
-// assertThat(item.getQuality(), equalTo(STANDARD_QUALITY + 1));
-// }
-
 }
