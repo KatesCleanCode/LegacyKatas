@@ -12,6 +12,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 public class GildedRoseBackstagePassesTest {
+ private static final int SELL_IN_BETWEEN_SIX_AND_TEN = 6;
  private GildedRose gildedRose;
  private UpdatableItem item;
 
@@ -40,7 +41,7 @@ public class GildedRoseBackstagePassesTest {
 
  @Test
  void itemIncreasesInQualityByTwoWhenSellInIsLessThanTenDays() {
-  item.setSellIn(9);
+  item.setSellIn(SELL_IN_BETWEEN_SIX_AND_TEN);
 
   gildedRose.updateQuality();
 
