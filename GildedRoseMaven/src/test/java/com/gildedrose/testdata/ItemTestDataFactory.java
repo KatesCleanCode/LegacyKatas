@@ -30,4 +30,10 @@ public class ItemTestDataFactory {
    STANDARD_SELL_IN, STANDARD_QUALITY));
  }
 
+ public static UpdatableItem getUpdatableBackstagePasses() {
+  return new UpdatableItem(
+   new Item("Backstage passes to a TAFKAL80ETC concert",
+    STANDARD_SELL_IN, STANDARD_QUALITY));
+ }
+
 }
