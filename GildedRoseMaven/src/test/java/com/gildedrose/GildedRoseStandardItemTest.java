@@ -64,9 +64,10 @@ public class GildedRoseStandardItemTest {
 
  @Test
  void atEndOfDayQualityIsDecreasedByOne() {
+  UpdatableItem item = getNewUpdatableItemAndResetGildedRose();
   gildedRose.updateQuality();
 
-  assertThat(item.quality, equalTo(STANDARD_QUALITY - 1));
+  assertThat(item.getQuality(), equalTo(STANDARD_QUALITY - 1));
  }
 
  @Test
