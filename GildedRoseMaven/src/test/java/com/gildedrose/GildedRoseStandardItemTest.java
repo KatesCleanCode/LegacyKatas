@@ -37,7 +37,6 @@ public class GildedRoseStandardItemTest {
 
  @Test
  void qualityOfAnItemIsNeverNegative() {
-  UpdatableItem item = getNewUpdatableItemAndResetGildedRose();
   item.setQuality(MINIMUM_QUALITY);
 
   gildedRose.updateQuality();
@@ -45,16 +44,8 @@ public class GildedRoseStandardItemTest {
   assertThat(item.getQuality(), equalTo(MINIMUM_QUALITY));
  }
 
- private UpdatableItem getNewUpdatableItemAndResetGildedRose() {
-  UpdatableItem item =
-   ItemTestDataFactory.getUpdatableStandardItem();
-  gildedRose = new GildedRose(item);
-  return item;
- }
-
  @Test
  void onceSellInDatePassedQualityDecreasesByTwo() {
-  UpdatableItem item = getNewUpdatableItemAndResetGildedRose();
   item.setSellIn(0);
 
   gildedRose.updateQuality();
@@ -64,7 +55,6 @@ public class GildedRoseStandardItemTest {
 
  @Test
  void atEndOfDayQualityIsDecreasedByOne() {
-  UpdatableItem item = getNewUpdatableItemAndResetGildedRose();
   gildedRose.updateQuality();
 
   assertThat(item.getQuality(), equalTo(STANDARD_QUALITY - 1));
