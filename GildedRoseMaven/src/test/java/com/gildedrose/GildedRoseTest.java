@@ -46,4 +46,17 @@ public class GildedRoseTest {
 
   assertThat(item.quality, equalTo(quality - 1));
  }
+
+ @Test
+ void atEndOfDaySellInIsDecreasedByOne() {
+  int sellIn = 10;
+  int quality = 20;
+  Item item = new Item("standard", sellIn, quality);
+  GildedRose gildedRose = new GildedRose(new Item[] { item });
+
+  gildedRose.updateQuality();
+
+  assertThat(item.sellIn, equalTo(sellIn - 1));
+ }
+
 }
