@@ -1,6 +1,7 @@
 package com.gildedrose.testdata;
 
 import com.gildedrose.Item;
+import com.gildedrose.UpdatableItem;
 
 public class ItemTestDataFactory {
  public static final int STANDARD_SELL_IN = 10;
@@ -14,6 +15,10 @@ public class ItemTestDataFactory {
 
  public static Item getAgedBrie() {
   return new Item("Aged Brie", STANDARD_SELL_IN, STANDARD_QUALITY);
+ }
+
+ public static UpdatableItem getUpdatableAgedBrie() {
+  return new UpdatableItem(getAgedBrie());
  }
 
 }
