@@ -34,4 +34,13 @@ public class GildedRoseBackstagePassesTest {
   assertThat(item.getQuality(), equalTo(STANDARD_QUALITY + 1));
  }
 
+ @Test
+ void itemIncreasesInQualityByTwoWhenSellInIsInTenDaysOrLess() {
+  item.setSellIn(10);
+
+  gildedRose.updateQuality();
+
+  assertThat(item.getQuality(), equalTo(STANDARD_QUALITY + 2));
+ }
+
 }
