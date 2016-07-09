@@ -1,5 +1,8 @@
 package com.gildedrose;
 
+import org.hamcrest.Matchers;
+import org.junit.Assert;
+import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
@@ -29,4 +32,13 @@ import org.junit.runner.RunWith;
  */
 @RunWith(JUnitPlatform.class)
 public class GildedRoseTest {
+ @Test
+ void atEndOfDayQualityIsDecreasedByOne() {
+  Item item = new Item("standard", 10, 20);
+  GildedRose gildedRose = new GildedRose(new Item[] { item });
+
+  gildedRose.updateQuality();
+
+  Assert.assertThat(item.quality, Matchers.equalTo(19));
+ }
 }
