@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import static com.gildedrose.testdata.ItemTestDataFactory.EXPIRE_DATE;
 import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_QUALITY;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -70,10 +71,10 @@ public class GildedRoseBackstagePassesTest {
 
  @Test
  void itemQualityDropsAfterConcert() {
-  item.setSellIn(0);
+  item.setSellIn(EXPIRE_DATE);
 
   gildedRose.updateQuality();
 
-  assertThat(item.getQuality(), equalTo(0));
+  assertThat(item.getQuality(), equalTo(EXPIRE_DATE));
  }
 }

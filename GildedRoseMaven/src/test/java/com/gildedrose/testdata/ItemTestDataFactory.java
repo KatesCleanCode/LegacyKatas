@@ -6,6 +6,7 @@ import com.gildedrose.UpdatableItem;
 public class ItemTestDataFactory {
  public static final int STANDARD_SELL_IN = 11;
  public static final int STANDARD_QUALITY = 20;
+ public static final int EXPIRE_DATE = 0;
  public static final int MINIMUM_QUALITY = 0;
  public static final int MAX_QUALITY = 50;
 

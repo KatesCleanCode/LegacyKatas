@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import static com.gildedrose.testdata.ItemTestDataFactory.EXPIRE_DATE;
 import static com.gildedrose.testdata.ItemTestDataFactory.MINIMUM_QUALITY;
 import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_QUALITY;
 import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_SELL_IN;
@@ -38,7 +39,7 @@ public class GildedRoseStandardItemTest {
 
  @Test
  void onceSellInDatePassedQualityDecreasesByTwo() {
-  item.setSellIn(0);
+  item.setSellIn(EXPIRE_DATE);
 
   gildedRose.updateQuality();
 
