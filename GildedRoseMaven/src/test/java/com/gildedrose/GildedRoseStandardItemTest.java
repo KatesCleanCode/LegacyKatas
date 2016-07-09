@@ -25,9 +25,6 @@ public class GildedRoseStandardItemTest {
   gildedRose = new GildedRose(item);
  }
 
-// - "Conjured" items degrade in Quality twice as fast as normal
-// items
-
  @Test
  void qualityOfAnItemIsNeverNegative() {
   item.setQuality(MINIMUM_QUALITY);

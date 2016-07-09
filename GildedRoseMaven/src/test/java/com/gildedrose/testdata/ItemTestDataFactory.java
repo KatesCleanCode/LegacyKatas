@@ -37,4 +37,9 @@ public class ItemTestDataFactory {
     STANDARD_SELL_IN, STANDARD_QUALITY));
  }
 
+ public static UpdatableItem getUpdatableConjuredItem() {
+  return new UpdatableItem(new Item("Conjured Mana Cake",
+   STANDARD_SELL_IN, STANDARD_QUALITY));
+ }
+
 }
