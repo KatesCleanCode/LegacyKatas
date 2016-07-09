@@ -54,9 +54,6 @@ public class GildedRoseTest {
 
  @Test
  void atEndOfDaySellInIsDecreasedByOne() {
-  Item item = ItemTestDataFactory.getStandardItem();
-  GildedRose gildedRose = new GildedRose(new Item[] { item });
-
   gildedRose.updateQuality();
 
   assertThat(item.sellIn, equalTo(STANDARD_SELL_IN - 1));
