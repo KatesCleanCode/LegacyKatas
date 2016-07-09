@@ -12,7 +12,7 @@ public class UpdatableItem {
   return item;
  }
 
- public Object getQuality() {
+ public int getQuality() {
   return item.quality;
  }
 

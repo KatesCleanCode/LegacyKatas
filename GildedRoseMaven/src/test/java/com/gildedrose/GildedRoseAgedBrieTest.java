@@ -17,11 +17,11 @@ import static org.junit.Assert.assertThat;
 public class GildedRoseAgedBrieTest {
 
  private GildedRose gildedRose;
- private Item item;
+ private UpdatableItem item;
 
  @BeforeEach
  void setUp() {
-  item = ItemTestDataFactory.getUpdatableAgedBrie().getItem();
+  item = ItemTestDataFactory.getUpdatableAgedBrie();
   gildedRose = new GildedRose(item);
  }
 
@@ -30,7 +30,7 @@ public class GildedRoseAgedBrieTest {
  void agedBrieIncreasesInQualityTheOlderItGets() {
   gildedRose.updateQuality();
 
-  assertThat(item.quality, equalTo(STANDARD_QUALITY + 1));
+  assertThat(item.getQuality(), equalTo(STANDARD_QUALITY + 1));
  }
 
 }
