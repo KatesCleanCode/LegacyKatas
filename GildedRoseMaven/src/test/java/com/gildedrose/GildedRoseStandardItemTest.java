@@ -40,11 +40,14 @@ public class GildedRoseStandardItemTest {
 
  @Test
  void qualityOfAnItemIsNeverNegative() {
-  item.quality = 0;
+  UpdatableItem item =
+   ItemTestDataFactory.getUpdatableStandardItem();
+  gildedRose = new GildedRose(item);
+  item.setQuality(MINIMUM_QUALITY);
 
   gildedRose.updateQuality();
 
-  assertThat(item.quality, equalTo(MINIMUM_QUALITY));
+  assertThat(item.getQuality(), equalTo(MINIMUM_QUALITY));
  }
 
  @Test

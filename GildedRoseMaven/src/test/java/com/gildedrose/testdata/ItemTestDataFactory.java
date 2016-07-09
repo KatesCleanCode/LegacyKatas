@@ -23,4 +23,8 @@ public class ItemTestDataFactory {
 
  public static final int MAX_QUALITY = 50;
 
+ public static UpdatableItem getUpdatableStandardItem() {
+  return new UpdatableItem(getStandardItem());
+ }
+
 }
