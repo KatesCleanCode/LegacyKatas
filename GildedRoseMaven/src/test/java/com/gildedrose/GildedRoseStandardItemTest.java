@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 @RunWith(JUnitPlatform.class)
-public class GildedRoseTest {
+public class GildedRoseStandardItemTest {
 
  private GildedRose gildedRose;
  private Item item;
@@ -27,7 +27,6 @@ public class GildedRoseTest {
   gildedRose = new GildedRose(new Item[] { item });
  }
 
-// - "Aged Brie" actually increases in Quality the older it gets
 // - The Quality of an item is never more than 50
 // - "Sulfuras", being a legendary item, never has to be sold or
 // decreases in Quality
@@ -39,15 +38,6 @@ public class GildedRoseTest {
 //
 // - "Conjured" items degrade in Quality twice as fast as normal
 // items
- @Test
- void agedBrieIncreasesInQualityTheOlderItGets() {
-  item = ItemTestDataFactory.getAgedBrie();
-  gildedRose = new GildedRose(new Item[] { item });
-
-  gildedRose.updateQuality();
-
-  assertThat(item.quality, equalTo(STANDARD_QUALITY + 1));
- }
 
  @Test
  void qualityOfAnItemIsNeverNegative() {
