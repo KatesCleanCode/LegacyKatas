@@ -46,6 +46,15 @@ public class GildedRoseTest {
  }
 
  @Test
+ void onceSellInDatePassedQualityDecreasesByTwo() {
+  item.sellIn = 0;
+
+  gildedRose.updateQuality();
+
+  assertThat(item.quality, equalTo(STANDARD_QUALITY - 2));
+ }
+
+ @Test
  void atEndOfDayQualityIsDecreasedByOne() {
   gildedRose.updateQuality();
 
