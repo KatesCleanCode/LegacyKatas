@@ -1,6 +1,7 @@
 package com.gildedrose;
 
 import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_QUALITY;
+import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_SELL_IN;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,8 +13,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 public class GildedRoseLegendaryItemTest {
-// - "Sulfuras", being a legendary item, never has to be sold or
-// decreases in Quality
  private GildedRose gildedRose;
  private UpdatableItem item;
 
@@ -28,5 +27,12 @@ public class GildedRoseLegendaryItemTest {
   gildedRose.updateQuality();
 
   assertThat(item.getQuality(), equalTo(STANDARD_QUALITY));
+ }
+
+ @Test
+ void sellInOfAnLegendaryItemIsNeverChanged() {
+  gildedRose.updateQuality();
+
+  assertThat(item.getSellIn(), equalTo(STANDARD_SELL_IN));
  }
 }
