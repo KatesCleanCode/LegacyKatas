@@ -15,7 +15,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 /**
- * - Once the sell by date has passed, Quality degrades twice as
  * fast - The Quality of an item is never negative - "Aged Brie"
  * actually increases in Quality the older it gets - The Quality of
  * an item is never more than 50 - "Sulfuras", being a legendary
@@ -43,6 +42,15 @@ public class GildedRoseTest {
  void setUp() {
   item = ItemTestDataFactory.getStandardItem();
   gildedRose = new GildedRose(new Item[] { item });
+ }
+
+ @Test
+ void qualityOfAnItemIsNeverNegative() {
+  item.quality = 0;
+
+  gildedRose.updateQuality();
+
+  assertThat(item.quality, equalTo(0));
  }
 
  @Test
