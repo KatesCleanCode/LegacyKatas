@@ -21,4 +21,6 @@ public class ItemTestDataFactory {
   return new UpdatableItem(getAgedBrie());
  }
 
+ public static final int MAX_QUALITY = 50;
+
 }

@@ -16,8 +16,8 @@ public class UpdatableItem {
   return item.quality;
  }
 
- public void setQuality(int i) {
-  item.quality = i;
+ public void setQuality(int quality) {
+  item.quality = quality;
  }
 
 }

@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import static com.gildedrose.testdata.ItemTestDataFactory.MAX_QUALITY;
 import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_QUALITY;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -27,11 +28,11 @@ public class GildedRoseAgedBrieTest {
 
  @Test
  void qualityOfAnItemIsNeverMoreThanMaxValue() {
-  item.setQuality(50);
+  item.setQuality(MAX_QUALITY);
 
   gildedRose.updateQuality();
 
-  assertThat(item.getQuality(), equalTo(50));
+  assertThat(item.getQuality(), equalTo(MAX_QUALITY));
  }
 
  @Test
