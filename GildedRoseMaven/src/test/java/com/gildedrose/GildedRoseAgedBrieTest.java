@@ -25,7 +25,15 @@ public class GildedRoseAgedBrieTest {
   gildedRose = new GildedRose(item);
  }
 
-// - The Quality of an item is never more than 50
+ @Test
+ void qualityOfAnItemIsNeverMoreThanMaxValue() {
+  item.setQuality(50);
+
+  gildedRose.updateQuality();
+
+  assertThat(item.getQuality(), equalTo(50));
+ }
+
  @Test
  void agedBrieIncreasesInQualityTheOlderItGets() {
   gildedRose.updateQuality();
