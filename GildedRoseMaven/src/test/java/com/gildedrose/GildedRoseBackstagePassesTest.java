@@ -1,11 +1,15 @@
 package com.gildedrose;
 
-import org.hamcrest.Matchers;
-import org.junit.Assert;
+import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_QUALITY;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.gildedrose.testdata.ItemTestDataFactory;
+
+import static org.hamcrest.Matchers.equalTo;
+
+import static org.junit.Assert.assertThat;
 
 public class GildedRoseBackstagePassesTest {
  private GildedRose gildedRose;
@@ -24,11 +28,10 @@ public class GildedRoseBackstagePassesTest {
 // Quality drops to 0 after the concert
 //
  @Test
- void backstagePassesIncreasesInQualityAsOlderItGets() {
+ void itemIncreasesInQualityByOne() {
   gildedRose.updateQuality();
 
-  Assert.assertThat(item.getQuality(),
-   Matchers.equalTo(ItemTestDataFactory.STANDARD_QUALITY + 1));
+  assertThat(item.getQuality(), equalTo(STANDARD_QUALITY + 1));
  }
 
 }
