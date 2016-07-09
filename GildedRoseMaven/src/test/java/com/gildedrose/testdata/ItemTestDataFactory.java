@@ -25,4 +25,9 @@ public class ItemTestDataFactory {
   return new UpdatableItem(getStandardItem());
  }
 
+ public static UpdatableItem getUpdatableLegendaryItem() {
+  return new UpdatableItem(new Item("Sulfuras, Hand of Ragnaros",
+   STANDARD_SELL_IN, STANDARD_QUALITY));
+ }
+
 }
