@@ -10,4 +10,6 @@ public class ItemTestDataFactory {
   return new Item("standard", STANDARD_SELL_IN, STANDARD_QUALITY);
  }
 
+ public static final int MINIMUM_QUALITY = 0;
+
 }
