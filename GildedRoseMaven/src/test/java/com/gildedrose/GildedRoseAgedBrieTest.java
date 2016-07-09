@@ -21,7 +21,7 @@ public class GildedRoseAgedBrieTest {
 
  @BeforeEach
  void setUp() {
-  item = ItemTestDataFactory.getAgedBrie();
+  item = ItemTestDataFactory.getUpdatableAgedBrie().getAgedBrie();
   gildedRose = new GildedRose(item);
  }
 
