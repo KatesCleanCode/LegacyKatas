@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import static com.gildedrose.testdata.ItemTestDataFactory.MINIMUM_QUALITY;
 import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_QUALITY;
 import static com.gildedrose.testdata.ItemTestDataFactory.STANDARD_SELL_IN;
 
@@ -50,7 +51,7 @@ public class GildedRoseTest {
 
   gildedRose.updateQuality();
 
-  assertThat(item.quality, equalTo(0));
+  assertThat(item.quality, equalTo(MINIMUM_QUALITY));
  }
 
  @Test
