@@ -57,6 +57,16 @@ public class GildedRoseBackstagePassesTest {
   assertThat(item.getQuality(), equalTo(STANDARD_QUALITY + 3));
  }
 
+ @Test
+ void
+  itemIncreasesInQualityByThreeWhenSellInIsLowerThanFiveDays() {
+  item.setSellIn(4);
+
+  gildedRose.updateQuality();
+
+  assertThat(item.getQuality(), equalTo(STANDARD_QUALITY + 3));
+ }
+
 // - "Backstage passes", like aged brie, increases in Quality as
 // its SellIn value approaches;
 // Quality increases by 2 when there are 10 days or less and by 3
