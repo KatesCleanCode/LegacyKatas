@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
+import com.gildedrose.testdata.ItemTestDataFactory;
+
 import static org.hamcrest.Matchers.equalTo;
 
 import static org.junit.Assert.assertThat;
@@ -35,6 +37,9 @@ import static org.junit.Assert.assertThat;
 @RunWith(JUnitPlatform.class)
 public class GildedRoseTest {
 
+ public static final int STANDARD_SELL_IN = 10;
+ public static final int STANDARD_QUALITY = 20;
+
  @Test
  void atEndOfDayQualityIsDecreasedByOne() {
   int sellIn = 10;
@@ -49,14 +54,13 @@ public class GildedRoseTest {
 
  @Test
  void atEndOfDaySellInIsDecreasedByOne() {
-  int sellIn = 10;
-  int quality = 20;
-  Item item = new Item("standard", sellIn, quality);
+// Item item =
+  Item item = ItemTestDataFactory.getStandardItem();
   GildedRose gildedRose = new GildedRose(new Item[] { item });
 
   gildedRose.updateQuality();
 
-  assertThat(item.sellIn, equalTo(sellIn - 1));
+  assertThat(item.sellIn, equalTo(STANDARD_SELL_IN - 1));
  }
 
 }
