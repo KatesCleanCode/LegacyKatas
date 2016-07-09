@@ -24,7 +24,7 @@ public class UpdatableItem {
   item.sellIn = i;
  }
 
- public Object getSellIn() {
+ public int getSellIn() {
   return item.sellIn;
  }
 

@@ -28,7 +28,8 @@ public class GildedRoseBackstagePassesTest {
 // Quality drops to 0 after the concert
 //
  @Test
- void itemIncreasesInQualityByOne() {
+ void itemIncreasesInQualityByOneWhenSellInIsHigherThanTenDays() {
+  item.setSellIn(11);
   gildedRose.updateQuality();
 
   assertThat(item.getQuality(), equalTo(STANDARD_QUALITY + 1));
