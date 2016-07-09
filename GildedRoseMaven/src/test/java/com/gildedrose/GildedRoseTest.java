@@ -27,9 +27,6 @@ public class GildedRoseTest {
   gildedRose = new GildedRose(new Item[] { item });
  }
 
-// - Once the sell by date has passed, Quality degrades twice as
-// fast
-// - The Quality of an item is never negative
 // - "Aged Brie" actually increases in Quality the older it gets
 // - The Quality of an item is never more than 50
 // - "Sulfuras", being a legendary item, never has to be sold or
@@ -42,6 +39,15 @@ public class GildedRoseTest {
 //
 // - "Conjured" items degrade in Quality twice as fast as normal
 // items
+ @Test
+ void agedBrieIncreasesInQualityTheOlderItGets() {
+  item = ItemTestDataFactory.getAgedBrie();
+  gildedRose = new GildedRose(new Item[] { item });
+
+  gildedRose.updateQuality();
+
+  assertThat(item.quality, equalTo(STANDARD_QUALITY + 1));
+ }
 
  @Test
  void qualityOfAnItemIsNeverNegative() {

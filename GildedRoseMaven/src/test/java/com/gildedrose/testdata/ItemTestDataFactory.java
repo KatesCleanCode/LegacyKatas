@@ -12,4 +12,8 @@ public class ItemTestDataFactory {
 
  public static final int MINIMUM_QUALITY = 0;
 
+ public static Item getAgedBrie() {
+  return new Item("Aged Brie", STANDARD_SELL_IN, STANDARD_QUALITY);
+ }
+
 }
